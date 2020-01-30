@@ -14,3 +14,8 @@ body {
   border-radius: 5px;
   justify-content: center;
 }
+
+.student-card {
+  background-color: seashell;
+  margin: 10px 10px;
+}
