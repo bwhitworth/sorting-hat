@@ -4,4 +4,13 @@ body {
 
 .jumbotron {
   margin: 10px 10px;
+  background-color: rgb(203, 187, 207);
+}
+
+.form-inline {
+  background-color: rgb(203, 187, 207);
+  margin: 10px 10px;
+  padding: 10px 10px;
+  border-radius: 5px;
+  justify-content: center;
 }
