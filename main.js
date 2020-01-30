@@ -25,9 +25,13 @@ const generateForm = () => {
     document.getElementById('sort').addEventListener('click', makeCard);
 };
 
-let domString = '';
+// let domString = '';
+
+let studentArray = [];
 
 const makeCard = () => {
+  let domString = '';
+  let newStudent;
   domString += '<div class="card student-card" style="width: 18rem;">'
   domString +=  '<div class="card-body">'
   domString +=    '<h5 class="card-title">Student Name</h5>'
@@ -35,9 +39,10 @@ const makeCard = () => {
   domString +=  '</div>'
   domString += '</div>'
 
-  console.log(domString);
+  newStudent = domString;
+  studentArray.push(newStudent);
 
-  printToDom('studentList', domString);
+  printToDom('student-list', studentArray);
 };
 
 
