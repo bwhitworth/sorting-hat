@@ -32,23 +32,39 @@ let houses = ['Gryffindor', 'Ravenclaw', 'Hufflepuff', 'Slytherin'];
 
 
 const makeCard = () => {
-  const randomizer = Math.floor(Math.random()*houses.length);
+  const randomHouse = Math.floor(Math.random()*houses.length);
+  const randomId = Math.random().toString(13).replace('0.', '');
   let domString = '';
   let newStudent;
-  domString += '<div class="card col-sm" style="width: 18rem;">'
+  domString += `<div class="card col-sm" style="width: 18rem;" id="${randomId}">`
   domString +=  '<div class="card-body">'
   domString +=    `<h5 class="card-title">${document.getElementById('inputname').value}</h5>`
-  domString +=    `<p class="card-text">${houses[randomizer]}</p>`
+  domString +=    `<p class="card-text">${houses[randomHouse]}</p>`
+  domString +=    '<button type="button" class="btn btn-dark" id="expel">Expel</button>'
   domString +=  '</div>'
   domString += '</div>'
-
   newStudent = domString;
   studentArray.push(newStudent);
-
   printToDom('student-list', studentArray);
+
+  console.log(randomId);
+
+  let expellClass = document.getElementsByClassName('btn-dark');
+
+  for (var i = 0; i < expellClass.length; i++) {
+    expellClass[i].addEventListener('click', expelStudent);
+  };
+
 };
 
+const expelStudent = () => {
+  console.log('expelled');
+  // let expelledId = 
 
+  // studentArray.filter(item => item !== expelledId);
+
+  // printToDom('student-list', studentArray);
+};
 
 
 
