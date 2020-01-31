@@ -15,7 +15,14 @@ body {
   justify-content: center;
 }
 
-.student-card {
+.student-list {
+  display: flex;
+  flex: row wrap;
+}
+
+.card {
   background-color: seashell;
-  margin: 10px 10px;
+  margin: 0px 10px;
+  flex-grow: 1;
+  width: 30%;
 }
