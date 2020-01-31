@@ -36,7 +36,8 @@ const makeCard = () => {
   const randomId = Math.random().toString(13).replace('0.', '');
   let domString = '';
   let newStudent;
-  domString += `<div class="card col-sm" style="width: 18rem;" id="${randomId}">`
+  let color = '';
+  domString += `<div class="card col-sm ${houses[randomHouse]}" style="width: 18rem;" id="${randomId}">`
   domString +=  '<div class="card-body">'
   domString +=    `<h5 class="card-title">${document.getElementById('inputname').value}</h5>`
   domString +=    `<p class="card-text">${houses[randomHouse]}</p>`
@@ -45,12 +46,13 @@ const makeCard = () => {
   domString += '</div>'
   newStudent = domString;
   studentArray.push(newStudent);
-  printToDom('student-list', studentArray);
+  printToDom('student-list',studentArray);
+
+  //if ()
 
   console.log(randomId);
 
   let expellClass = document.getElementsByClassName('btn-dark');
-
   for (var i = 0; i < expellClass.length; i++) {
     expellClass[i].addEventListener('click', expelStudent);
   };
@@ -59,9 +61,7 @@ const makeCard = () => {
 
 const expelStudent = () => {
   console.log('expelled');
-  // let expelledId = 
-
-  // studentArray.filter(item => item !== expelledId);
+  //studentArray.findIndex($(this).parent('div').attr('id'));
 
   // printToDom('student-list', studentArray);
 };
