@@ -20,7 +20,9 @@ body {
   flex: row wrap;
 }
 
-.student-card {
+.card {
   background-color: seashell;
-  margin: 10px 10px;
+  margin: 0px 10px;
+  flex-grow: 1;
+  width: 30%;
 }

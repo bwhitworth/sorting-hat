@@ -25,17 +25,20 @@ const generateForm = () => {
     document.getElementById('sort').addEventListener('click', makeCard);
 };
 
-// let domString = '';
 
 let studentArray = [];
 
+let houses = ['Gryffindor', 'Ravenclaw', 'Hufflepuff', 'Slytherin'];
+
+
 const makeCard = () => {
+  const randomizer = Math.floor(Math.random()*houses.length);
   let domString = '';
   let newStudent;
-  domString += '<div class="card student-card" style="width: 18rem;">'
+  domString += '<div class="card col-sm" style="width: 18rem;">'
   domString +=  '<div class="card-body">'
-  domString +=    '<h5 class="card-title">Student Name</h5>'
-  domString +=    '<p class="card-text">House</p>'
+  domString +=    `<h5 class="card-title">${document.getElementById('inputname').value}</h5>`
+  domString +=    `<p class="card-text">${houses[randomizer]}</p>`
   domString +=  '</div>'
   domString += '</div>'
 
