@@ -26,3 +26,22 @@ body {
   flex-grow: 1;
   width: 30%;
 }
+
+.Gryffindor {
+  background-color:darkred;
+  color: white;
+}
+
+.Ravenclaw {
+  background-color: royalblue;
+  color: white;
+}
+
+.Hufflepuff {
+  background-color: gold;
+}
+
+.Slytherin {
+  background-color: green;
+  color: white;
+}
