@@ -38,3 +38,8 @@ body {
   background-color: green;
   color: white;
 }
+
+.BadGuy {
+  background-color: dimgray;
+  color: lightgray;
+};
