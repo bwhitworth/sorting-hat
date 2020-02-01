@@ -39,6 +39,10 @@ body {
   color: white;
 }
 
+#army-list {
+  background-color: black;
+}
+
 .BadGuy {
   background-color: dimgray;
   color: lightgray;

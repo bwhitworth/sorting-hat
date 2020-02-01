@@ -20,7 +20,6 @@ const generateForm = () => {
     printToDom('formBox', domString);
     document.getElementById('sort').addEventListener('click', makeStudent);
     document.getElementById('sort').addEventListener('click', clearInput);
-
 };
 
 const clearInput = () => {
@@ -43,14 +42,14 @@ const makeStudent = () => {
     house: `${houses[randomHouse]}`
   };
   studentArray.push(newStudent);
-
+  
   studentArray.sort(function(a, b){
     let nameA=a.name.toLowerCase(), nameB=b.name.toLowerCase()
-    if (nameA < nameB) //sort string ascending
+    if (nameA < nameB)
         return -1 
     if (nameA > nameB)
         return 1
-    return 0 //default return value (no sorting)
+    return 0
 });
 
   makeCards();
@@ -97,7 +96,6 @@ const expelStudent = (e) => {
       studentArray[i].house = `Voldemort's Army`;
       voldemortArmy.push(studentArray[i]);
       studentArray.splice(i, 1);
-      // changes house to Army, splices out of Students, pushes into Army array
     }
   }
   makeCards();
