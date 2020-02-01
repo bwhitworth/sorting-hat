@@ -22,7 +22,7 @@ const generateForm = () => {
     domString += '</form>'
   
     printToDom('formBox', domString);
-    document.getElementById('sort').addEventListener('click', makeCard);
+    document.getElementById('sort').addEventListener('click', makeStudent);
 };
 
 
@@ -30,27 +30,32 @@ let studentArray = [];
 
 let houses = ['Gryffindor', 'Ravenclaw', 'Hufflepuff', 'Slytherin'];
 
-
-const makeCard = () => {
+const makeStudent = () => {
   const randomHouse = Math.floor(Math.random()*houses.length);
   const randomId = Math.random().toString(13).replace('0.', '');
+  newStudent = {
+    id: randomId,
+    name: document.getElementById('inputname').value,
+    house: `${houses[randomHouse]}`
+  };
+  studentArray.push(newStudent);
+
+  makeCards();
+
+};
+
+const makeCards = () => {
   let domString = '';
-  let newStudent;
-  let color = '';
-  domString += `<div class="card col-sm ${houses[randomHouse]}" style="width: 18rem;" id="${randomId}">`
+  for (let i = 0; i < studentArray.length; i++) {
+  domString += `<div class="card row-cols ${studentArray[i].house}" style="width: 18rem;" >`
   domString +=  '<div class="card-body">'
-  domString +=    `<h5 class="card-title">${document.getElementById('inputname').value}</h5>`
-  domString +=    `<p class="card-text">${houses[randomHouse]}</p>`
-  domString +=    '<button type="button" class="btn btn-dark" id="expel">Expel</button>'
+  domString +=    `<h5 class="card-title">${studentArray[i].name}</h5>`
+  domString +=    `<p class="card-text">${studentArray[i].house}</p>`
+  domString +=    `<button type="button" class="btn btn-dark" id="${studentArray[i].id}">Expel</button>`
   domString +=  '</div>'
   domString += '</div>'
-  newStudent = domString;
-  studentArray.push(newStudent);
-  printToDom('student-list',studentArray);
-
-  //if ()
-
-  console.log(randomId);
+  }
+  printToDom('student-list',domString);
 
   let expellClass = document.getElementsByClassName('btn-dark');
   for (var i = 0; i < expellClass.length; i++) {
@@ -59,11 +64,16 @@ const makeCard = () => {
 
 };
 
-const expelStudent = () => {
-  console.log('expelled');
-  //studentArray.findIndex($(this).parent('div').attr('id'));
-
-  // printToDom('student-list', studentArray);
+const expelStudent = (e) => {
+  const studentId = e.target.id;
+  console.log(`expel ${studentId}`);
+  for(let i = 0; i< studentArray.length; i++) {
+    if(studentArray[i].id == studentId) {
+      studentArray.splice(i, 1);
+    }
+  }
+  
+  makeCards();
 };
 
 
