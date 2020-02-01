@@ -15,7 +15,7 @@ const generateForm = () => {
     domString +=    '</div>'
     domString +=    '<div class="form-group mx-sm-3 mb-2">'
     domString +=      '<label for="inputPassword2" class="sr-only">Student Name Here</label>'
-    domString +=      '<input type="text" class="form-control" id="inputname" placeholder="Neville Longbottom">'
+    domString +=      `<input type="text" class="form-control" id="inputname" placeholder="Neville Longbottom" onclick="this.value=''">`
     domString +=    '</div>'
     domString +=    '<button type="submit" class="btn btn-secondary mb-2" id="sort">Sort!</button>'
     domString +=  '</div>'
@@ -23,14 +23,16 @@ const generateForm = () => {
   
     printToDom('formBox', domString);
     document.getElementById('sort').addEventListener('click', makeStudent);
+
 };
 
-
 let studentArray = [];
-
 let houses = ['Gryffindor', 'Ravenclaw', 'Hufflepuff', 'Slytherin'];
 
 const makeStudent = () => {
+  if (document.getElementById('inputname').value == '') {
+    alert("Please enter First Year Name");
+    return false;} else {
   const randomHouse = Math.floor(Math.random()*houses.length);
   const randomId = Math.random().toString(13).replace('0.', '');
   newStudent = {
@@ -41,7 +43,7 @@ const makeStudent = () => {
   studentArray.push(newStudent);
 
   makeCards();
-
+}
 };
 
 const makeCards = () => {
@@ -80,7 +82,6 @@ const expelStudent = (e) => {
 
 const events = () => {
 document.getElementById('startSort').addEventListener('click', generateForm);
-
 };
 
 const init = () => {
