@@ -15,17 +15,17 @@ Use HTML, CSS styles, and Javascript to design a web page that accepts input to 
 _based on the Sorting Hat concept from the Harry Potter books/films_
 
 #### Exercise Requirements
->  - A Bootstrap Jumbotron should appear on page load, with a brief description and instructions
->  - A button in the Jumbotron should open a Bootstrap form, which provides an input field for student name and a Submit button
->  - Upon Submit, the student's card should display their name and randomly selected House, and clear the input field
->  - Each card should also contain an Expel button, which removes them from the record of students
->  - App should be responsive to multiple device screen sizes (particularly small screens)
+  - A Bootstrap Jumbotron should appear on page load, with a brief description and instructions
+  - A button in the Jumbotron should open a Bootstrap form, which provides an input field for student name and a Submit button
+  - Upon Submit, the student's card should display their name and randomly selected House, and clear the input field
+  - Each card should also contain an Expel button, which removes them from the record of students
+  - App should be responsive to multiple device screen sizes (particularly small screens)
 
 #### Bonus Challenges Completed
->  - [x] Error message appears for attempted submission of blank name
->  - [x] Color of the student card varies, depending upon House
->  - [x] Sort the student cards by some criteria, such as alphabetized names
->  - [x] Display the expelled students as a separate set of cards, and style them differently from the others
+  - [x] Error message appears for attempted submission of blank name
+  - [x] Color of the student card varies, depending upon House
+  - [x] Sort the student cards by some criteria, such as alphabetized names
+  - [x] Display the expelled students as a separate set of cards, and style them differently from the others
 
 ### Screenshot:
 #### Sorted and Expelled students displayed
