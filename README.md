@@ -32,7 +32,7 @@ _based on the Sorting Hat concept from the Harry Potter books/films_
 ![screenshot](screenshots/sorting-hat-screenshot-1.png)
 
 ### Instructions to Run:
-![Click here to view the web app](https://sorting-hat-bwhitworth.firebaseapp.com/?#)
+[Click here to view the web app](https://sorting-hat-bwhitworth.firebaseapp.com/?#)
 
 1. If you do not have npm http-server installed, follow instuctions [here](https://www.npmjs.com/package/http-server) to install on your device
 1. Use GitHub's [Cloning Feature](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository) to download a local copy of the files for this project
